@@ -155,14 +155,31 @@ input, textarea, select { font-family: inherit; }
   justify-content: space-between;
 }
 .logo {
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 6px;
+  overflow: hidden;
 }
-.logo-icon { color: var(--accent); font-size: 1rem; }
+.logo-img {
+  height: auto;
+  width: 200px;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 0 8px var(--accent-glow));
+  transition: filter var(--transition), transform var(--transition), width var(--transition);
+  margin: -20px -10px;
+}
+#navbar.scrolled .logo-img {
+  width: 160px;
+  margin: -16px -8px;
+}
+.logo:hover .logo-img {
+  filter: drop-shadow(0 0 16px var(--accent-glow));
+  transform: scale(1.03);
+}
+.footer-logo-img {
+  width: 220px;
+  margin: -24px -12px;
+}
 
 .nav-links {
   display: flex;
